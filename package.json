@@ -1,0 +1,22 @@
+{
+  "name": "react-projects",
+  "version": "1.0.0",
+  "description": "This project is to learn react",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damyantjain/react-projects.git"
+  },
+  "author": "Damyant Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damyantjain/react-projects/issues"
+  },
+  "homepage": "https://github.com/damyantjain/react-projects#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
