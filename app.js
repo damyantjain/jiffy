@@ -23,12 +23,12 @@ const RestaurantCard = () =>{
   return(
     <div className="res-card">
       <div className="res-img-container">
-        <img className="res-img" src={require("./assets/logo/appLogo.png")} />
+        <img className="res-img" src={require("./assets/logo/burger-singh-logo.jpg")} />
       </div>
       <div className="res-details">
         <h3>Burger Singh</h3>
-        <p>Location</p>
-        <p>Rating</p>
+        <p>ETA - 38 minutes</p>
+        <p>4.4 ★</p>
       </div>
     </div>
   );
