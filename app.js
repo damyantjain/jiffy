@@ -1,32 +1,58 @@
-// const heading = React.createElement("h1", null, "Hello World");
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-
-{/* <div id="root">
-    <div id="child1">
-        <h1>Hello World</h1>
-        <h2>Hello React</h2>
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={require("./assets/logo/appLogo.png")} />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
-    <div id="child2">
-        <h1>Hello World</h1>
-        <h2>Hello React</h2>
-    </div>
-</div> */}
+  );
+};
 
-const content = React.createElement("div", {id: "parent"}, 
-    [
-    React.createElement("div", {id: "child1"},
-    [
-        React.createElement("h1", null, "Hello World"),
-        React.createElement("h2", null, "Hello React")
-    ]),
-    React.createElement("div", {id: "child1"},
-    [
-        React.createElement("h1", null, "Hello World"),
-        React.createElement("h2", null, "Hello React")
-    ])
-]);
+const RestaurantCard = () =>{
+  return(
+    <div className="res-card">
+      <div className="res-img-container">
+        <img className="res-img" src={require("./assets/logo/appLogo.png")} />
+      </div>
+      <div className="res-details">
+        <h3>Restaurant Name</h3>
+        <p>Location</p>
+        <p>Rating</p>
+      </div>
+    </div>
+  );
+}
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(content);
+root.render(<AppLayout />);
