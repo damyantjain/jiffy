@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   return (
@@ -19,11 +20,14 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = () =>{
-  return(
+const RestaurantCard = () => {
+  return (
     <div className="res-card">
       <div className="res-img-container">
-        <img className="res-img" src={require("./assets/logo/burger-singh-logo.jpg")} />
+        <img
+          className="res-img"
+          src={require("./assets/logo/burger-singh-logo.jpg")}
+        />
       </div>
       <div className="res-details">
         <h3>Burger Singh</h3>
@@ -32,7 +36,7 @@ const RestaurantCard = () =>{
       </div>
     </div>
   );
-}
+};
 
 const Body = () => {
   return (
@@ -47,7 +51,7 @@ const Body = () => {
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div className="app container">
       <Header />
       <Body />
     </div>
