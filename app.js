@@ -26,7 +26,7 @@ const RestaurantCard = () =>{
         <img className="res-img" src={require("./assets/logo/appLogo.png")} />
       </div>
       <div className="res-details">
-        <h3>Restaurant Name</h3>
+        <h3>Burger Singh</h3>
         <p>Location</p>
         <p>Rating</p>
       </div>
