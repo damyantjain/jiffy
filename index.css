@@ -43,3 +43,20 @@
   background-image: linear-gradient(to right, #f0f0f0 0%, #d9d9d9 50%, #f0f0f0 100%);
   background-size: 200% 100%;
 }
+
+.shimmer-line{
+  height: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to right, #f0f0f0 0%, #d9d9d9 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+}
+
+.shimmer-sm{
+  width: 30%;
+}
+
+.shimmer-md{
+  width: 50%;
+}
