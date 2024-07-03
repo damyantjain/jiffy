@@ -10,17 +10,17 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        updateRestaurants();
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //       updateRestaurants();
+  //     }
+  //   };
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [resList]);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [resList]);
 
 
   const getRestaurants = async () => {
@@ -53,6 +53,7 @@ const Body = () => {
   //   setResList([...resList, ...restaurants]);
   //   setFilteredResList([...resList, ...restaurants]);
   // }
+  
 
   const serachRestaurant = () => {
     if(searchText === ""){
@@ -70,7 +71,7 @@ const Body = () => {
         <div className="search row form-row align-items-center mt-2">
           <div className="col-sm-3">
             <input type="text" className="search-bar form-control" 
-            placeholder="Search Restaurants" 
+            placeholder="Search Restaurants"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)} /> 
           </div>
