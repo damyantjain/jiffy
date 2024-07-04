@@ -60,3 +60,17 @@
 .shimmer-md{
   width: 50%;
 }
+
+
+.menu-card{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.menu-item-image{
+  width: 156px;
+  height: 144px;
+  object-fit: cover;
+  border-radius: 20px;
+}

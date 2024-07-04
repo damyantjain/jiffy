@@ -21,18 +21,19 @@ const RestaurantMenu = () => {
     setResInfo(json?.data?.cards[2]?.card?.card?.info);
   };
 
-  if(menu.length === 0){
-    return <Shimmer />
+  if (menu.length === 0) {
+    return <Shimmer />;
   }
-  return ( 
+  return (
     <div className="menu">
-      <h1>{resInfo?.name}</h1>
-      <h2>Menu</h2>
+      <h3>{resInfo?.name}</h3>
       {menu?.map((c, indexC) => {
         var items = c.card.card.itemCards;
         return (
           <div key={`${c.card.card.title}-${indexC}`}>
-            <h3>{c.card.card.title}</h3>
+            <div style={{marginBottom:10}}>
+              <span style={{ fontWeight: "bold", fontSize:20 }}>{c.card.card.title}</span>
+            </div>
             {items?.map((item) => {
               const info = item.card.info;
               return (
