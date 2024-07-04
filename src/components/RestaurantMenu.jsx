@@ -1,31 +1,48 @@
 import { useState, useEffect } from "react";
+import MenuItem from "./MenuItem";
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   const [menu, setMenu] = useState([]);
+  const [resInfo, setResInfo] = useState({});
   useEffect(() => {
     fetchMenu();
   }, []);
+  const { resId } = useParams();
 
   const fetchMenu = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.572341&lng=77.0776524&restaurantId=221216&catalog_qa=undefined&submitAction=ENTER"
-    );
+    const data = await fetch(MENU_API + resId);
     const json = await data.json();
     const menuList =
-      json?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards;
+      json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     setMenu(menuList.slice(2));
+    setResInfo(json?.data?.cards[2]?.card?.card?.info);
   };
 
-  return (
+  if(menu.length === 0){
+    return <Shimmer />
+  }
+  return ( 
     <div className="menu">
-      <h1>Restaurant Name</h1>
+      <h1>{resInfo?.name}</h1>
       <h2>Menu</h2>
-      {menu?.map((c) => {
+      {menu?.map((c, indexC) => {
         var items = c.card.card.itemCards;
-        return items?.map((item) => {
-          var info = item.card.info;
-          return <div key={info.name}>{info.name}</div>;
-        });
+        return (
+          <div key={`${c.card.card.title}-${indexC}`}>
+            <h3>{c.card.card.title}</h3>
+            {items?.map((item) => {
+              const info = item.card.info;
+              return (
+                <div key={info.name}>
+                  <MenuItem info={info} />
+                </div>
+              );
+            })}
+          </div>
+        );
       })}
     </div>
   );
