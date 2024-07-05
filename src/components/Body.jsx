@@ -105,7 +105,7 @@ const Body = () => {
       <div className="row">
         {filteredResList?.map((res) => (
           <div key={res.info.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
-            <Link to={`/restaurant/${res.info.id}`}>
+            <Link to={`/restaurant/${res.info.id}`} className="res-link">
               <RestaurantCard res={res.info} />
             </Link>
           </div>

@@ -74,3 +74,8 @@
   object-fit: cover;
   border-radius: 20px;
 }
+
+.res-link{
+  text-decoration: none;
+  color: black;
+}
