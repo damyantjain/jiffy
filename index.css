@@ -79,3 +79,11 @@
   text-decoration: none;
   color: black;
 }
+
+.user-card{
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
