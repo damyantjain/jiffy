@@ -2,10 +2,8 @@ import { useEffect } from "react";
 
 export const User = () => {
 
-    let timer;
-
     useEffect(() => {
-        timer = setInterval(() => {
+        const timer = setInterval(() => {
             console.log("User component is mounted")
         }, 1000);
 
