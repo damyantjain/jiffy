@@ -1,4 +1,19 @@
+import { useEffect } from "react";
+
 export const User = () => {
+
+    let timer;
+
+    useEffect(() => {
+        timer = setInterval(() => {
+            console.log("User component is mounted")
+        }, 1000);
+
+        return () => {
+            clearInterval(timer);
+        }
+    }, [])
+
     return(
         <div className="user-card">
             <h3>Damyant Jain</h3>
