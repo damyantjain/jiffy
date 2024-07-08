@@ -1,7 +1,6 @@
 import {CDN_URL} from "../utils/constants";
 const MenuItem = (props) => {
   const { info } = props;
-  console.log(info.imageId);
   return (
     <div className="menu-card row">
       <div className="col">
