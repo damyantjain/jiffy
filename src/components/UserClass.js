@@ -5,20 +5,34 @@ class UserClass extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            count : 0
+            userInfo : {
+            }
         }
+    }
+
+    
+
+    componentDidMount(){
+        this.fetchUserData();
+    }
+
+    async fetchUserData(){
+        const data = await fetch("https://api.github.com/users/damyantjain");
+        const json = await data.json();
+        this.setState(
+            {userInfo : json}
+        );
+        console.log(json);
     }
 
     render(){
         const { name } = this.props;
-        this.setState({
-            count : 3
-        })
+        const user = this.state.userInfo;
         return (
             <div className="user-card">
-            <h3>{this.state.count}</h3>
-            <h3>{name}</h3>
-            <h4>Boston, MA</h4>
+            <img className="userImg" src={user.avatar_url}/>
+            <h3>{user.name}</h3>
+            <h4>{user.location}</h4>
             <h4>Linkedin - @damyant</h4>
         </div>
         )

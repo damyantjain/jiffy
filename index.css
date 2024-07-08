@@ -81,9 +81,15 @@
 }
 
 .user-card{
-  width: 300px;
+  width:max-content;
   border: 1px solid black;
-  padding: 5px;
+  padding: 15px;
   border-radius: 8px;
   background-color: #f0f0f0;
+}
+
+.userImg{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
