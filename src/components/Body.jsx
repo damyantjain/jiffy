@@ -48,24 +48,22 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
-        <div className="search row form-row align-items-center mt-2">
-          <div className="col-sm-3">
+        <div className="search">
+          <div>
             <input
               type="text"
-              className="search-bar form-control"
+              className="search-bar"
               placeholder="Search Restaurants"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
           </div>
           <button
-            className="btn btn-success col-auto"
             onClick={serachRestaurant}
           >
             Search
           </button>
           <button
-            className="btn btn-primary col-auto ms-2"
             onClick={() => {
               setFilteredResList(
                 resList.filter((res) => res.info.avgRating > 4.3)
@@ -76,9 +74,9 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="row">
+      <div>
         {filteredResList?.map((res) => (
-          <div key={res.info.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
+          <div key={res.info.id}>
             <Link to={`/restaurant/${res.info.id}`} className="res-link">
               <RestaurantCard res={res.info} />
             </Link>
