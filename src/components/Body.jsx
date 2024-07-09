@@ -46,24 +46,22 @@ const Body = () => {
     return <Shimmer />;
   }
   return (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="body mx-52 mt-5">
+      <div className="filter mb-5">
+        <div className="search flex justify-between">
           <div>
             <input
               type="text"
-              className="search-bar"
+              className="search-bar border-2 border-gray-300 rounded-md p-1 px-3 w-60 h-10"
               placeholder="Search Restaurants"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
-          </div>
-          <button
-            onClick={serachRestaurant}
-          >
+          <button onClick={serachRestaurant} className="ml-5 border-1 bg-lime-300 p-1 px-3 h-10 rounded-md">
             Search
           </button>
-          <button
+          </div>
+          <button className="border-2 border-gray-300 p-1 px-3 h-10 rounded-full"
             onClick={() => {
               setFilteredResList(
                 resList.filter((res) => res.info.avgRating > 4.3)
@@ -74,9 +72,9 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className="grid grid-cols-4 gap-5">
         {filteredResList?.map((res) => (
-          <div key={res.info.id}>
+          <div key={res.infoid}>
             <Link to={`/restaurant/${res.info.id}`} className="res-link">
               <RestaurantCard res={res.info} />
             </Link>

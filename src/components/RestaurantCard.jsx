@@ -4,21 +4,20 @@ export default RestaurantCard = (props) => {
   const { cloudinaryImageId, name, sla, costForTwo, avgRating, cuisines } = res;
 
   return (
-    <div>
+    <div className="h-72 hover:cursor-pointer hover:scale-90 transition-transform duration-200 ease-in-out">
       <div>
-        <img src={CDN_URL + cloudinaryImageId} />
+        <img  className="w-full object-cover h-44 rounded-2xl" src={CDN_URL + cloudinaryImageId} />
       </div>
       <div>
-        <span style={{ fontWeight: "bold" }}>{name}</span>
+        <span className="font-bold">{name}</span> 
         <br />
-        <span style={{ fontWeight: "bold" }}>
+        <span className="font-bold">
           {avgRating} ★{" "}
-          <span style={{ marginLeft: "20px" }}>{sla.slaString}</span>{" "}
+          <span className="ml-[20px]">{sla.slaString}</span>{" "}
         </span>
         <br />
-        <span>{cuisines.join(", ")}</span>
-        <br />
-        <span>{costForTwo}</span>
+        <span className="block text-gray-600 truncate">{cuisines.join(", ")}</span>
+        <span className="text-gray-600">{costForTwo}</span>
       </div>
     </div>
   );
