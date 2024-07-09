@@ -15,14 +15,14 @@ const RestaurantMenu = () => {
   const resInfo = resInf?.data?.cards[2]?.card?.card?.info
 
   return (
-    <div className="menu">
-      <h3>{resInfo?.name}</h3>
+    <div className="menu mx-80">  
+      <span className="font-bold  text-xl">{resInfo?.name}</span>
       {menu?.map((c, indexC) => {
         var items = c.card.card.itemCards;
         return (
           <div key={`${c.card.card.title}-${indexC}`}>
             <div style={{marginBottom:10}}>
-              <span style={{ fontWeight: "bold", fontSize:20 }}>{c.card.card.title}</span>
+              <span className="font-bold text-xl">{c.card.card.title}</span>
             </div>
             {items?.map((item) => {
               const info = item.card.info;
