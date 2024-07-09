@@ -4,11 +4,11 @@ export default RestaurantCard = (props) => {
   const { cloudinaryImageId, name, sla, costForTwo, avgRating, cuisines } = res;
 
   return (
-    <div className="res-card m-2">
-      <div className="res-img-container">
-        <img className="res-img" src={CDN_URL + cloudinaryImageId} />
+    <div>
+      <div>
+        <img src={CDN_URL + cloudinaryImageId} />
       </div>
-      <div className="res-details mt-3">
+      <div>
         <span style={{ fontWeight: "bold" }}>{name}</span>
         <br />
         <span style={{ fontWeight: "bold" }}>
