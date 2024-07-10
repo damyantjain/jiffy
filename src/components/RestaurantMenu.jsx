@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MenuItem from "./MenuItem";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import ShimmerRestaurant from "./ShimmerRestaurant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
   const resInf = useRestaurantMenu(resId);
 
   if (resInf === null) {
-    return <Shimmer />;
+    return <ShimmerRestaurant />;
   }
   const menu = resInf?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(2);
   const resInfo = resInf?.data?.cards[2]?.card?.card?.info

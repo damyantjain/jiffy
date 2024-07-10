@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+import ShimmerRestaurant from "./ShimmerRestaurant";
 import { Link } from "react-router-dom";
 import { RESTAURANT_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -41,9 +41,8 @@ const Body = () => {
   if(!onlineStatus){
     return <h1 className="offlineHeader">You are not connected to the Internet!</h1>
   }
-
   if (resList.length === 0) {
-    return <Shimmer />;
+    return <ShimmerRestaurant />;
   }
   return (
     <div className="body mx-52 mt-5">
