@@ -1,12 +1,8 @@
 import MenuItem from "./MenuItem";
-import { useState } from "react";
 
-const ItemList = ({ items, title }) => {
-
-  const [showItems, setShowItems] = useState(false);
-
+const ItemList = ({ items, title, showItems, selectedIndex }) => {
   const handleAccordianClick = () => {
-    setShowItems(!showItems);
+    selectedIndex();
   }
 
   return (

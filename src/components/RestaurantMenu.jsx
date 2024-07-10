@@ -9,6 +9,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInf = useRestaurantMenu(resId);
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   if (resInf === null) {
     return <ShimmerRestaurant />;
   }
@@ -30,8 +32,13 @@ const RestaurantMenu = () => {
           var items = c.card.card.itemCards;
           return (
             <div key={`${c.card.card.title}-${indexC}`}>
-              <ItemList items={items} title={c.card.card.title}/>
-              <div className="bg-gray-100 h-4 mb-4"/>
+              <ItemList
+                items={items}
+                title={c.card.card.title}
+                showItems={indexC === selectedIndex}
+                selectedIndex = {() => setSelectedIndex(indexC)}
+              />
+              <div className="bg-gray-100 h-4 mb-4" />
             </div>
           );
         })}
