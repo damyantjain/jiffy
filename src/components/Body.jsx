@@ -81,10 +81,9 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-4 gap-5">
         {filteredResList?.map((res) => (
-          <div key={res.info.id}>
+          <div className="hover:cursor-pointer hover:scale-90 transition-transform duration-200 ease-in-out" key={res.info.id}>
             <Link to={`/restaurant/${res.info.id}`} className="res-link">
-              {res.info.aggregatedDiscountInfoV3?.header !== null ||
-              res.info.aggregatedDiscountInfoV3?.header !== "" ? (
+              { res.info.aggregatedDiscountInfoV3?.header !== undefined ? (
                 <RestaurantCardDiscount res={res.info} />
               ) : (
                 <RestaurantCard res={res.info} />
