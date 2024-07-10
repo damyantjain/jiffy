@@ -2,10 +2,10 @@
 const ShimmerCard = () => {
     return (
         <div className="h-72">
-            <div className="bg-gray-300 h-44 rounded-2xl"></div>
+            <div className="h-44 rounded-2xl bg-gradient-to-r from-[#f0f0f0] to-[#d9d9d9] "></div>
             <div className="">
-                <div className="shimmer-line bg-gray-300 w-7/12 rounded-md h-4 mt-3"></div>
-                <div className="shimmer-line bg-gray-300 w-4/12 rounded-md h-4 mt-3"></div>
+                <div className="shimmer-line bg-gradient-to-r from-[#f0f0f0] to-[#d9d9d9] w-7/12 rounded-md h-4 mt-3"></div>
+                <div className="shimmer-line bg-gradient-to-r from-[#f0f0f0] to-[#d9d9d9] w-4/12 rounded-md h-4 mt-3"></div>
             </div>
         </div>
     )
