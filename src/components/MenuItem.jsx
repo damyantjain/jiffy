@@ -14,11 +14,12 @@ const MenuItem = (props) => {
           <span>{info.description}</span>
         </div>
         {info.imageId !== undefined && (
-          <div>
+          <div className="relative">
             <img
               className="h-[156] w-[156] rounded-xl object-cover"
               src={CDN_URL + info.imageId}
             />
+            <button className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-1 px-8 text-green-600 border-2 font-bold">ADD</button>
           </div>
         )}
       </div>
