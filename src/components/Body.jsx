@@ -1,4 +1,7 @@
-import RestaurantCard, { RestaurantCardDiscount, withDiscountLabel } from "./RestaurantCard";
+import RestaurantCard, {
+  RestaurantCardDiscount,
+  withDiscountLabel,
+} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import ShimmerRestaurant from "./ShimmerRestaurant";
 import { Link } from "react-router-dom";
@@ -24,7 +27,6 @@ const Body = () => {
       resCard[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setResList(restaurants);
     setFilteredResList(restaurants);
-    console.log(restaurants);
   };
 
   const serachRestaurant = () => {
@@ -81,9 +83,12 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-4 gap-5">
         {filteredResList?.map((res) => (
-          <div className="hover:cursor-pointer hover:scale-90 transition-transform duration-200 ease-in-out" key={res.info.id}>
+          <div
+            className="hover:cursor-pointer hover:scale-90 transition-transform duration-200 ease-in-out"
+            key={res.info.id}
+          >
             <Link to={`/restaurant/${res.info.id}`} className="res-link">
-              { res.info.aggregatedDiscountInfoV3?.header !== undefined ? (
+              {res.info.aggregatedDiscountInfoV3?.header !== undefined ? (
                 <RestaurantCardDiscount res={res.info} />
               ) : (
                 <RestaurantCard res={res.info} />
