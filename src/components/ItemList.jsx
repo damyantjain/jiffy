@@ -2,7 +2,11 @@ import MenuItem from "./MenuItem";
 
 const ItemList = ({ items, title, showItems, selectedIndex }) => {
   const handleAccordianClick = () => {
-    selectedIndex();
+    if(showItems){
+        selectedIndex(null);
+    } else {
+        selectedIndex();
+    }
   }
 
   return (

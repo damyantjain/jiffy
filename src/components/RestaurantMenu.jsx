@@ -36,7 +36,7 @@ const RestaurantMenu = () => {
                 items={items}
                 title={c.card.card.title}
                 showItems={indexC === selectedIndex}
-                selectedIndex = {() => setSelectedIndex(indexC)}
+                selectedIndex = {(c) => c === null? setSelectedIndex(null) : setSelectedIndex(indexC)}
               />
               <div className="bg-gray-100 h-4 mb-4" />
             </div>
