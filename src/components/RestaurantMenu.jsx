@@ -30,11 +30,8 @@ const RestaurantMenu = () => {
           var items = c.card.card.itemCards;
           return (
             <div key={`${c.card.card.title}-${indexC}`}>
-              <div className="mb-4 flex justify-between">
-                <span className="font-bold text-xl">{c.card.card.title} ({items.length})</span>
-                <span className="pr-2 text-xl">⬇️</span>
-              </div>
-              <ItemList items={items} />
+              <ItemList items={items} title={c.card.card.title}/>
+              <div className="bg-gray-100 h-4 mb-4"/>
             </div>
           );
         })}
