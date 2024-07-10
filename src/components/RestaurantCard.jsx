@@ -1,5 +1,5 @@
 import { CDN_URL } from "../utils/constants";
-export default RestaurantCard = (props) => {
+const RestaurantCard = (props) => {
   const { res } = props;
   const { cloudinaryImageId, name, sla, costForTwo, avgRating, cuisines } = res;
 
@@ -22,3 +22,19 @@ export default RestaurantCard = (props) => {
     </div>
   );
 };
+
+export const withDiscountLabel = (RestaurantCard) => {
+  return (props) => {
+      const { res } = props;
+      const { aggregatedDiscountInfoV3 } = res;
+      console.log(aggregatedDiscountInfoV3);
+      return (
+          <div>
+              <span>{aggregatedDiscountInfoV3?.header} {aggregatedDiscountInfoV3?.subHeader}</span>
+              <RestaurantCard {...props} />
+          </div>
+      );
+  }
+}
+
+export default RestaurantCard;
