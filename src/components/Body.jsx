@@ -51,7 +51,7 @@ const Body = () => {
     return <ShimmerRestaurant />;
   }
   return (
-    <div className="body mx-52 mt-5">
+    <div className="mx-52 mt-5">
       <div className="filter mb-5">
         <div className="search flex justify-between">
           <div>
