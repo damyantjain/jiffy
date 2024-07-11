@@ -11,15 +11,15 @@ const ItemList = ({ items, title, showItems, selectedIndex }) => {
 
   return (
     <div>
-      <div className="mb-4 flex justify-between">
+      <div 
+          onClick={handleAccordianClick} className="mb-4 flex justify-between hover:cursor-pointer">
         <span className="font-bold text-xl">
           {title} ({items.length})
         </span>
         <span
-          onClick={handleAccordianClick}
-          className="pr-2 text-xl hover:cursor-pointer"
+          className="pr-2 text-l "
         >
-          ⬇️
+          {showItems ? "▲" : "▼"}
         </span>
       </div>
       {showItems && items?.map((item) => {

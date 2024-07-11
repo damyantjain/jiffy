@@ -14,7 +14,7 @@ const RestaurantMenu = () => {
   if (resInf === null) {
     return <ShimmerRestaurant />;
   }
-  //const menu = resInf?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(2);
+  
   const resInfo = resInf?.data?.cards[2]?.card?.card?.info;
   const menu =
     resInf?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
