@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
+
   return (
     <div className="header shadow-md">
       <div className="flex justify-between mx-52">
         <div className="logo-container">
-          <img className="logo w-24" src={require("../../assets/logo/appLogo.png")} />
+          <img
+            className="logo w-24"
+            src={require("../../assets/logo/appLogo.png")}
+          />
         </div>
         <div className="nav-items flex items-center mr-5">
           <ul className="flex">
