@@ -8,7 +8,7 @@ const About = () => {
         <h1>About Us</h1>
         <User />
         <UserClass name="Damyant Jain"/>
-        <Counter />
+        {/* <Counter /> */}
     </div>
     );
 }
