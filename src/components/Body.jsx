@@ -1,5 +1,4 @@
 import RestaurantCard, {
-  RestaurantCardDiscount,
   withDiscountLabel,
 } from "./RestaurantCard";
 import { useState, useEffect } from "react";
