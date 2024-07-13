@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import ShimmerRestaurant from "./components/ShimmerRestaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -24,12 +26,14 @@ const AppLayout = () => {
   });
 
   return (
-    <UserContext.Provider value={{ logged_in_user: userName }}>
-      <div>
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ logged_in_user: userName }}>
+        <div>
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
