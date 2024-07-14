@@ -8,7 +8,7 @@ const Cart = () => {
   const isCartEmpty = cartData?.length === 0;
 
   if (isCartEmpty) {
-      return <div className="flex justify-center items-center w-full h-screen text-2xl">Your cart is empty</div>;
+      return <div className="flex justify-center items-center w-full h-[80vh] text-2xl">Your cart is empty</div>;
   } 
   return (
     <div className="px-56 py-8 flex bg-[#e9ecee] h-screen">
