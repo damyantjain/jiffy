@@ -5,7 +5,11 @@ import BillDetails from "./BillDetails";
 
 const Cart = () => {
   const cartData = useSelector((store) => store.cart.items);
+  const isCartEmpty = cartData?.length === 0;
 
+  if (isCartEmpty) {
+      return <div className="flex justify-center items-center w-full h-screen text-2xl">Your cart is empty</div>;
+  } 
   return (
     <div className="px-56 py-8 flex bg-[#e9ecee] h-screen">
       <div className="w-8/12 mr-8">
