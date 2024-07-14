@@ -13,7 +13,7 @@ const Cart = () => {
         <div className="bg-white mb-5 p-4">Delivery Address</div>
         <div className="bg-white p-4">Change Payment Method</div>
       </div>
-      <div className="w-4/12 bg-white">
+      <div className="w-4/12 bg-white p-4">
         <RestaurantHeader />
         <CartItems />
         <BillDetails />
