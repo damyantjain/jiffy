@@ -1,14 +1,19 @@
 import { CDN_URL } from "../utils/constants";
-import { useDispatch } from "react-redux";
-import { addItem } from "../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, clearCart } from "../store/cartSlice";
+import { setRestaurantInfo } from "../store/restaurantSlice";
 
 const MenuItem = (props) => {
-
   const dispatch = useDispatch();
-
+  const { items, cartResInfo } = useSelector((slice) => slice.cart);
+  const resInfo = useSelector((slice) => slice.restaurant.resInfo);
   const handleAddItem = (item) => {
-    dispatch(addItem(item));
-  }
+    console.log(resInfo, cartResInfo);
+    if (items?.length > 0 && cartResInfo.id !== resInfo.id) {
+      dispatch(clearCart());
+    }
+    dispatch(addItem({item: item, cartResInfo: resInfo}));
+  };
 
   const { info } = props;
   return (
@@ -29,7 +34,10 @@ const MenuItem = (props) => {
               className="h-[156] w-[156] rounded-xl object-cover"
               src={CDN_URL + info.imageId}
             />
-            <button onClick={() => handleAddItem(info)} className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-1 px-8 text-green-600 border-2 font-bold">
+            <button
+              onClick={() => handleAddItem(info)}
+              className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-1 px-8 text-green-600 border-2 font-bold"
+            >
               ADD
             </button>
           </div>

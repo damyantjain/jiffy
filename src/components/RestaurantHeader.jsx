@@ -3,7 +3,6 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantHeader = () => {
   const resInfo = useSelector((slice) => slice.restaurant.resInfo);
-  console.log(resInfo);
 
   return (
     <div className="flex">

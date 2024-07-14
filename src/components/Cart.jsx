@@ -5,7 +5,6 @@ import BillDetails from "./BillDetails";
 
 const Cart = () => {
   const cartData = useSelector((store) => store.cart.items);
-  console.log(cartData);
 
   return (
     <div className="px-56 py-8 flex bg-[#e9ecee] h-screen">
