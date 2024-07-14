@@ -1,5 +1,14 @@
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../store/cartSlice";
 const MenuItem = (props) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  }
+
   const { info } = props;
   return (
     <div>
@@ -19,11 +28,13 @@ const MenuItem = (props) => {
               className="h-[156] w-[156] rounded-xl object-cover"
               src={CDN_URL + info.imageId}
             />
-            <button className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-1 px-8 text-green-600 border-2 font-bold">ADD</button>
+            <button onClick={() => handleAddItem(info)} className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-1 px-8 text-green-600 border-2 font-bold">
+              ADD
+            </button>
           </div>
         )}
       </div>
-<hr className="my-8"></hr>
+      <hr className="my-8"></hr>
     </div>
   );
 };
