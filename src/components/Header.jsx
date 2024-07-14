@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
 import { useSelector } from "react-redux";
-import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const cartData = useSelector((s) => s.cart.items);
@@ -28,7 +26,9 @@ const Header = () => {
             <li className="px-4">
               <Link to="/contact">Contact</Link>
             </li>
-            <li className="px-4">Cart ({cartData.length} items)</li>
+            <li className="px-4">
+              <Link to="/cart">Cart ({cartData.length} items)</Link>
+            </li>
           </ul>
         </div>
       </div>

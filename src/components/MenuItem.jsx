@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/cartSlice";
+
 const MenuItem = (props) => {
 
   const dispatch = useDispatch();
