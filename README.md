@@ -39,3 +39,18 @@ A comprehensive food delivery website built using **React.js**. This project aim
 - **Frontend**: React.js, Redux, TailwindCSS
 - **Build Tools**: Parcel
 - **APIs**: Swiggy Live APIs
+
+
+
+## 💽 Installation Guide
+
+1. Prerequisites - Node.js and npm
+2. Clone the repository
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+4. Start the development server:
+    ```sh
+    npm start
+    ```
