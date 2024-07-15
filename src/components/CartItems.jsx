@@ -47,7 +47,7 @@ const CartItems = () => {
             </button>
           </div>
           <div className="text-gray-700 w-1/4 items-center justify-center flex text-sm">
-            ₹ {(item.price / 100) * item.count}
+            ₹ {(item.price / 100 || info.defaultPrice / 100) * item.count}
           </div>
         </div>
       ))}
