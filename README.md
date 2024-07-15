@@ -37,5 +37,5 @@ A comprehensive food delivery website built using **React.js**. This project aim
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js, Redux, TailwindCSS
-- **Build Tools**: Parcel/WebPack
+- **Build Tools**: Parcel
 - **APIs**: Swiggy Live APIs
