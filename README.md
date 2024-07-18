@@ -2,7 +2,7 @@
 
 A comprehensive food delivery website built using **React.js**. This project aims to explore React.js in depth, leveraging **Redux** for state management and **TailwindCSS** for enhancing the user interface. For practical learning, it uses live APIs from **Swiggy**, a leading food delivery company in India.
 
-Website - [Jiffy](jiffy-delivery.netlify.app/)
+Website - [Jiffy](https://jiffy-delivery.netlify.app/)
 
 
 ## 🚀 Features
