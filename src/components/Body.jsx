@@ -20,7 +20,7 @@ const Body = () => {
     var data = await fetch(RESTAURANT_API);
     var res = await data.json();
     var resCard = res?.data?.cards?.filter(
-      (c) => c.card.card.id == "top_brands_for_you"
+      (c) => c.card.card.id === "top_brands_for_you"
     );
     var restaurants =
       resCard[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -46,7 +46,7 @@ const Body = () => {
       <h1 className="offlineHeader">You are not connected to the Internet!</h1>
     );
   }
-  if (resList.length === 0) {
+  if (resList === undefined || resList.length === 0) {
     return <ShimmerRestaurant />;
   }
   return (
