@@ -28,7 +28,6 @@ class UserClass extends React.Component {
         <UserContext.Consumer>
           {(data) => <h3>{data.logged_in_user}</h3>}
         </UserContext.Consumer>
-        <h3>{user.name}</h3>
         <h4>{user.location}</h4>
         <h4>Linkedin - @damyant</h4>
       </div>
