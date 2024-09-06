@@ -53,10 +53,6 @@ const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
         path:"/cart",
         element: <Cart />
       },
